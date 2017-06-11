@@ -1,4 +1,4 @@
-FROM ubuntu:16.10
+FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04
 LABEL maintainer "jakub.skalecki@gmail.com"
 
 #2.7
