@@ -1,6 +1,14 @@
 # docker-python-opencv-ffmpeg
 Repository for clean Dockerfile containing ffmpeg, opencv3 and python2, based on Ubuntu
 
+# Versions
+
+`:latest` Python 2.7, OpenCV 3.2, ffmpeg
+`:py3` Python 3.5, OpenCV, ffmpeg
+`:cuda` Python 2.7, OpenCV, ffmpeg with CUDA support
+`:cuda-py3` Python 3.5, OpenCV, ffmpeg with CUDA support
+
+
 # Build
 You can build it on your own
 
@@ -16,7 +24,7 @@ But I encourage you to use version from DockerHub - it's MUCH faster
     
 # Usage
 
-Image has OpenCV3, python2.7 and ffmpeg ready to use. Example:
+Image has OpenCV3, python2.7/3.5 and ffmpeg ready to use. Example:
     
     docker run --rm -it -v $PWD:/srv valian/docker-python-opencv-ffmpeg python
     >>> import cv2; cv2.VideoCapture('/srv/example.mp4').read()
