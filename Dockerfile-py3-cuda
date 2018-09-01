@@ -16,6 +16,7 @@ RUN apt-get -y update && apt-get -y install python$PYTHON_VERSION-dev wget unzip
     && unzip -q opencv_contrib3.zip && mv /opencv_contrib-3.2.0 /opencv_contrib && rm opencv_contrib3.zip \
 
     # prepare build
+    # https://docs.opencv.org/3.4/d6/d15/tutorial_building_tegra_cuda.html
     && mkdir /opencv/build && cd /opencv/build \
     && cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D BUILD_PYTHON_SUPPORT=ON \
@@ -27,6 +28,9 @@ RUN apt-get -y update && apt-get -y install python$PYTHON_VERSION-dev wget unzip
       -D BUILD_opencv_python2=OFF \
       -D WITH_IPP=OFF \
       -D WITH_FFMPEG=ON \
+      -D WITH_CUDA=ON \
+      -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-8.0 \
+      -D WITH_CUBLAS=ON \
       -D WITH_V4L=ON .. \
 
     # install
