@@ -89,4 +89,4 @@ RUN apt-get -y update && \
     rm -rf /opencv /opencv_contrib /var/lib/apt/lists/*
 
 # Define default command.
-CMD ["python3 --version"]
+CMD ["python3", "--version"]
